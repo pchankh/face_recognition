@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/home/myxo/face_recognition/facerecognition_guide",
+			"file_exclude_patterns": ["*.png", "*.jpg", "*.pyc", "*.swp", "*.log", "*.plk"]
+		}
+	],
+
+	// SublimeLinter-flake8
+    "SublimeLinter":
+    {
+        "@python": 2.7
+    },
+
+    // SublimePythonIDE
+    "settings": {
+        "python_interpreter": "/usr/bin/python"
+    }
+}
