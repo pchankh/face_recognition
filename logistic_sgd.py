@@ -94,7 +94,10 @@ class LogisticRegression(object):
 
     def negative_log_likelihood(self, y):
         """Return the mean of the negative log-likelihood of the prediction
-        of this model under a given target distribution.
+        of this model under a giv
+This tutorial introduces logistic regression using Theano and stochastic
+gradient descent.
+en target distribution.
 
         .. math::
 
@@ -211,6 +214,7 @@ def load_data(dataset):
     valid_set_x, valid_set_y = shared_dataset(valid_set)
     train_set_x, train_set_y = shared_dataset(train_set)
 
+    print test_set_x.get_value(borrow=True).shape[0]
     rval = [(train_set_x, train_set_y), (valid_set_x, valid_set_y),
             (test_set_x, test_set_y)]
     return rval
