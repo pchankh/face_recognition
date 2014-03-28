@@ -122,10 +122,12 @@ def evaluate_lenet5(learning_rate=0.1, n_epochs=200,
     :param nkerns: number of kernels on each layer
     """
 
-    batch_size = 20
+    batch_size = 50
 
     rng = numpy.random.RandomState(23455)
-    dataset = '/home/myxo/face_recognition/face_recognition/test.pkl.gz'
+    #dataset = '/home/myxo/face_recognition/face_recognition/test.pkl.gz'
+    dataset = 'yale_test.pkl.gz'
+    output_dim = 38
     datasets = load_data(dataset)
 
     train_set_x, train_set_y = datasets[0]
@@ -186,7 +188,7 @@ def evaluate_lenet5(learning_rate=0.1, n_epochs=200,
                          n_out=500, activation=T.tanh)
 
     # classify the values of the fully-connected sigmoidal layer
-    layer3 = LogisticRegression(input=layer2.output, n_in=500, n_out=15)
+    layer3 = LogisticRegression(input=layer2.output, n_in=500, n_out=output_dim)
 
     # the cost we minimize during training is the NLL of the model
     cost = layer3.negative_log_likelihood(y)
